@@ -6,6 +6,7 @@
 - [Understanding gpio.c](#Understanding-gpio.c)
 - [Understanding main.c](#Understanding-main.c)
 - [Simulation Output](#Simulation-output)
+- [TLDR; Summary](#TLDR;-Summary)
 
 ---
 
@@ -173,7 +174,27 @@ int main(void)
 
 ## Simulation Output
 
+![Sim_out](program_output.png)
 
+---
+
+## TLDR; Summary
+
+- `gpio.h`
+
+`gpio.h` is the header file of the GPIO firmware library. It contains the API declarations, macro definitions, and function prototypes required for GPIO operations. This file acts as the interface between the application code and the GPIO implementation, allowing other files to use GPIO functions without knowing how they are internally implemented.
+
+- `gpio.c`
+
+gpio.c is the implementation file of the GPIO firmware library. It contains the actual definitions of the GPIO functions declared in `gpio.h`. This file represents the low-level firmware layer that interacts with hardware or simulates hardware behavior.
+
+In the current code, the GPIO functions use `printf()` statements to simulate GPIO operations such as pin initialization, writing values, and reading values. Since this is only a software simulation, no actual hardware registers are accessed.
+
+In a real embedded system, gpio.c would contain hardware-specific code that directly modifies memory-mapped GPIO registers to control physical pins on a microcontroller. This file would therefore act as the GPIO driver or HAL implementation.
+
+- `main.c`
+
+`main.c` is the application layer of the program and contains the `main()` function, which is the entry point of execution. It uses the GPIO APIs provided by the firmware library to perform simple LED and button operations.
 
 
 
