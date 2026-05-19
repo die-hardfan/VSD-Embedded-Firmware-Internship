@@ -1,4 +1,4 @@
-# Part C: Understanding a simple firmware library
+# Part B, C: Environment Setup and Understanding a simple firmware library
 
 ## Table of Contents
 - [Environment setup](#Environment-setup)
